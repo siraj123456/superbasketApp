@@ -1,0 +1,30 @@
+<mat-card class="example-result-card">
+    <mat-card-content>
+        <div>
+            <h2>
+                Ready to create your costumized form? <button (click)="createForm(value)">create form</button>
+            </h2>
+        </div>
+    </mat-card-content>
+</mat-card>
+<app-date-picker></app-date-picker>
+<form [formGroup]="parentForm" (ngSubmit)="onSubmit()">
+    <mat-card class="mat-elevation-z8 m-b-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="{{f.class}}" *ngFor="let f of fields">
+                    <app-input *ngIf="f.fieldType=='text' || f.fieldType=='password' || f.fieldType=='email'"
+                        [parentForm]="parentForm" [label]="f.label" [fieldType]="f.fieldType" [class]="f.innerClass"
+                        [formField]="f.formField"></app-input>
+
+                    <app-slider *ngIf="f.fieldType=='slider'" [parentForm]="parentForm" [formField]="f.formField" [class]="f.innerClass"
+                        [label]="f.label"></app-slider>
+
+                    <app-select *ngIf="f.fieldType=='select'" [parentForm]="parentForm" [formField]="f.formField" [class]="f.innerClass"
+                    [label]="f.label">></app-select>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+    <button class="submit-btn" mat-raised-button color="primary" type="submit">Update Profile</button>
+</form>

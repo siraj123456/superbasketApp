@@ -1,0 +1,16 @@
+.add-item-dialog-wrapper {
+    max-width: 300px;
+}
+
+.form-dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+.position-counter input {
+    width: 100%;
+}
+.position-counter {
+    padding: 0px!important;
+    width: 100%;
+}

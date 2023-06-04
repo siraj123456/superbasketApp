@@ -1,0 +1,23 @@
+.onlineStores-list, .cook-list {
+    list-style-type: none;
+    padding: 0px;
+}
+.onlineStores-list li, .cook-list li {
+    font-size: 12px;
+    cursor: pointer;
+}
+.cook-title, .order-online-title {
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 15px;
+}
+.cook-description, .order-online-description {
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.dashed {
+    border-top: 3px dashed #bbb;
+    margin: 10px 0px;
+}

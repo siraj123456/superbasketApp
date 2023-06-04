@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-12">
+
+  </div>
+
+<div class="col-12 m-b-15">
+  <h3 class="items-title m-b-7">
+    <span class="items-title">Items</span>
+    
+    <div (click)="openAttentionDialog()" matBadge="4" matBadgeOverlap="false" class="attention-section">
+      <span class="attention"> 
+        <div class="attention-arrows-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path d="M246.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 41.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path d="M246.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 41.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+          </svg>
+        </div>
+        Attention: these items will expire soon! </span>
+    </div>
+
+  </h3>
+    <div class="above-table-wrapper">
+      <button mat-raised-button color="primary" (click)="openAddItemDialog()">Add Item</button>
+      <span>you currently have <span class="items-number">{{ (dataSource.value)?.length }}</span> items in your closet. </span>    
+    </div>
+</div>
+<!-- <ul>
+  <li *ngFor="let item of items | async"> {{item.title}}</li>
+</ul> -->
+
+<div class="col-12">
+  <table mat-table [dataSource]="dataSource.value" multiTemplateDataRows class="items-table-wrapper">
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+      <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+      <td mat-cell *matCellDef="let element" class="buttons-table-wrapper">
+        <mat-icon class="edit-btn" (click)="edit(element.position)">edit</mat-icon>
+        <mat-icon class="delete-btn" (click)="delete(element.position)">delete</mat-icon>
+        <button mat-icon-button aria-label="expand row"
+          (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+          <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+        <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <a href="/item/{{element.position}}/{{element.title}}/{{element.quantity}}/{{element.expirationDate}}/{{element.description}}/{{element.weight}}/{{element.url}}">
+            <div class="thumbnail-image" [ngStyle]="{ 'background-image': 'url('  +'/assets/images/'+ element.url + ')' }">
+  
+            </div>
+          </a>
+      
+          <!-- <div class="example-element-diagram">
+            <div class="example-element-position"> {{element.position}} </div>
+            <div class="example-element-symbol"> {{element.size}} </div>
+            <div class="example-element-name"> {{element.title}} </div>
+          </div> -->
+          <div class="example-element-description">
+            <span>{{element.description}}</span>
+            <span>{{element.quantity}}</span>
+            <span>{{element.weight}} - mg</span>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;" class="example-element-row">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="items-wrapper">
+    <div *ngFor="let item of items" class="item-wrapper">
+        <app-item [item]="item"></app-item>
+    </div>  
+</div> -->
+
+</div>

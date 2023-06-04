@@ -1,0 +1,20 @@
+To scan a product and get its information inputted in an Angular application, you can follow the steps below:
+
+Install a barcode scanner library or plugin in your Angular application. Some popular libraries include ngx-scanner, ngx-qr-scanner, and zxing.
+
+Create a component or page in your Angular application that will handle the scanning of the product. You can use the built-in camera on a mobile device or a desktop/laptop computer with a webcam.
+
+Initialize the barcode scanner library or plugin in your component or page. This typically involves importing the library, initializing it, and configuring the scanner settings.
+
+Implement a function in your component or page that will handle the scanning of the product. This function will be called when a barcode or QR code is detected by the scanner.
+
+When the function is called, retrieve the scanned code from the scanner and use it to query your database or API for the product information associated with that code.
+
+Display the product information in your Angular application, either on the same page or on a different page or component.
+
+Overall, the process involves setting up the scanner in your Angular application, creating a function to handle the scanning and retrieval of the product information, and then displaying that information in your application.
+
+
+links:
+https://github.com/zxing-js/ngx-scanner/wiki/Getting-Started
+https://www.npmjs.com/package/@zxing/ngx-scanner

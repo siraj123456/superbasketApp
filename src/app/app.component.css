@@ -1,0 +1,26 @@
+@media  (max-width: 767px) {
+    .show-on-mobile.mobile-drawer .mat-toolbar {
+        display: initial;
+    }
+}
+
+@media  (min-width: 768px) {
+    .header-wrapper {
+        background: linear-gradient(#115c49, transparent);
+        position: fixed!important;
+        top: 0px;
+        width: 100%;
+        transition: all 0.3s;
+        z-index: 100000;
+    }
+    
+}
+
+
+
+.mobile-drawer {
+    background-color: #8ee8dd;
+}
+.mobile-drawer ::ng-deep .mat-drawer.mat-drawer-push {
+    background-color: #f5f5f5;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+             <div class="col-md-7">
+              
+                    <div class="item-image"  [ngStyle]="{ 'background-image': 'url(' +'/assets/images/'+ item.url + ')' }">
+                    </div>
+                
+                
+            </div>
+             <div class="col-md-5">
+                 <div class="item-discription-wrapper">
+                     <h2 class="item-title">title</h2>
+                     <div class="item-discription">
+                         <ul>
+                            <li>{{item.title}}</li>
+                            <li>{{item.quantity}}</li>
+                            <li>{{item.expirationDate}}</li>
+                            <li>{{item.description}}</li>
+                            <li>{{item.weight}}</li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+            </div>
+         </div>
+    </div>
+</div>

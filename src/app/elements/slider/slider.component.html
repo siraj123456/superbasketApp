@@ -1,0 +1,9 @@
+<label for="email" [formGroup]="parentForm">
+  <div>
+    {{label}}
+    <mat-slider class="{{class}}"
+    [formControlName]="formField" #val [min]="10" [max]="100">
+    </mat-slider>
+    {{val.value}}
+  </div>
+</label>

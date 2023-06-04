@@ -1,0 +1,20 @@
+.card-wrapper ul {
+    list-style: none;
+}
+
+
+.text-align-center {
+    text-align: center;
+}
+
+.product-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product-wrapper img {
+    width: 150px;
+    margin: auto;
+}
+

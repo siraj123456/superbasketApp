@@ -1,0 +1,40 @@
+<!-- desktop view-->
+<div *ngIf="screenWidth>767" class="container-fluid h-100-vh">
+  <div class="row h-100per">
+    <div class="col-12 p-0 pos-rel">
+      <app-header class="header-wrapper"></app-header>
+      <app-home class="w-100per"></app-home>
+      <app-footer ></app-footer>
+    </div>
+  </div>
+</div>
+
+<!-- mobile view-->
+<mat-drawer-container *ngIf="screenWidth<=767" [hasBackdrop]="true" class="mobile-drawer show-on-mobile h-100-vh" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="push">
+      <app-header class="header-wrapper"></app-header>
+    </mat-drawer>
+    <div>
+        <mat-toolbar>
+            <div>
+                <button mat-icon-button (click)="showFiller = !showFiller"
+                    aria-label="Example icon-button with menu icon">
+                </button>
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <span>My App</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon"
+                    aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>share</mat-icon>
+                </button>
+            </div>
+            <app-home class="w-100per"></app-home>
+            <app-footer ></app-footer>
+        </mat-toolbar>
+    </div>
+</mat-drawer-container>

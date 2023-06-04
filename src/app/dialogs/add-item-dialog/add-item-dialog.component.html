@@ -1,0 +1,40 @@
+<div class="add-item-dialog-wrapper">
+  <h2>Add New product</h2>
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field> -->
+
+  <form [formGroup]="parentForm" (ngSubmit)="onSubmit(generatedValue)">
+    <div class="">
+      <div class="row">
+        <!--generate position value-->
+        <div class="col-12">
+          <label style="pointer-events:none;" for="email"
+           class="col-12 position-counter" [formGroup]="parentForm">
+            <p>Position</p>
+            <input type="text" tabIndex="1"
+             [formControlName]="'position'"
+              placeholder="{{generatedValue}}">
+          </label>
+        </div>
+
+        <div class="{{f.class}}" *ngFor="let f of fields">
+          <app-input *ngIf="f.fieldType=='text' || f.fieldType=='password' || f.fieldType=='email'"
+            [parentForm]="parentForm" [label]="f.label" [fieldType]="f.fieldType" [class]="f.innerClass"
+            [formField]="f.formField"></app-input>
+        </div>
+        <div class="col-12 form-dialog-buttons">
+          <button mat-button (click)="onNoClick()">No Thanks</button>
+          <button
+            [disabled]="!(this.parentForm?.value.title && this.parentForm?.value.description && this.parentForm?.value.expirationDate && this.parentForm?.value.quantity)"
+            class="submit-btn" mat-raised-button color="primary" type="submit">Add new Item</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+
+
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row m-t-30">
+        <!-- <div class="col-12">
+            <button class="m-b-30" mat-raised-button color="accent" (click)="diplayForm=!diplayForm" type="button">Add Form</button>
+            <button>Input Field</button>
+            <button>Checkbox</button>
+            <button>dropdown</button>
+            <button>slide toggle</button>
+            <button>color field</button>
+            <button>textarea</button>
+           <div>  
+            <app-forms></app-forms>
+           </div>
+        </div> -->
+
+
+        <div class="col-xs-12 col-md-9" [ngClass]="{'m-b-30': mobileView<768}">
+            <mat-card class="card-background-color mat-elevation-z8">
+                <app-items></app-items>
+            </mat-card>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <div class="row">
+            <div class="col-12 m-b-30">
+                <mat-card class="card-background-color mat-elevation-z8">
+                    <mat-card-content>
+                        <h3 class="order-online-title m-b-5 shimmer">Order Online</h3>
+                        <p class="order-online-description">Craving a fast meal?</p>
+                        <hr class="dashed">
+                        <div class="order-online-wrapper">
+                            <ul class="onlineStores-list">
+                                <li>Uber Eats</li>
+                                <li>Deliveroo</li>
+                                <li>Zomato</li>
+                                <li>Talabat</li>
+                                <li>Monoprix</li>
+                                <li>InterMarche</li>
+                            </ul>
+                        </div>
+                    </mat-card-content>
+                  </mat-card>
+            </div>
+            <div class="col-12">
+                <mat-card class="card-background-color mat-elevation-z8">
+                    <mat-card-content>
+                        <h3 class="cook-title m-b-5 shimmer">Fancy preparing a delicious dish?</h3>
+                        <p class="cook-description">Prepare a meal based on what you have? get inspired by</p>
+                        <hr class="dashed">
+                        <div class="cook-wrapper">
+                            <ul class="cook-list">
+                                <li>Shou tabkhin lyum?</li>
+                                <li>Chef Ramzi</li>
+                                <li>Mama Hanan</li>
+                            </ul>
+                        </div>
+                    </mat-card-content>
+                  </mat-card>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

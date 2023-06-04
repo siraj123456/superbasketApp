@@ -1,0 +1,34 @@
+.profile-img-wrapper {
+    background-image: url('/assets/images/profile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    min-height: 110px;
+}
+
+.short-description ul {
+    list-style: none;
+    padding: 0px 15px;
+    text-align: center;
+}
+
+.m-15 {
+    margin: 15px;
+}
+
+.w-100per {
+    width: 100%;
+}
+
+.submit-btn {
+    margin: 0px 15px 15px 15px;
+}
+
+.profile-card {
+    margin: 15px 0px 15px 0px
+}
+
+.dis-flex {
+    display: flex;
+}
